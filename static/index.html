@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEIT CS — Counter-Strike 1.6 jamoasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="noise-overlay"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <span class="brand-mark">W</span>
+          <span class="brand-name">WEIT<span class="brand-cs">CS</span></span>
+        </div>
+        <nav class="main-nav" id="main-nav">
+          <a href="#server">Server</a>
+          <a href="#players">O'yinchilar</a>
+          <a href="#vip">VIP</a>
+          <a href="#connect">Ulanish</a>
+        </nav>
+        <div class="header-right">
+          <a
+            class="nav-cta"
+            href="steam://connect/84.54.82.234:27047"
+            id="nav-connect-btn"
+            >O'YNASH</a
+          >
+          <button class="menu-toggle" id="menu-toggle" aria-label="Menyu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+          <div class="hero-status" id="hero-status">
+            <span class="dot dot-loading"></span>
+            <span id="hero-status-text">Serverga ulanmoqda...</span>
+          </div>
+          <h1 class="hero-title">
+            Klassik urush.<br />
+            Zamonaviy jamoa.
+          </h1>
+          <p class="hero-sub">
+            WEIT CS — Counter-Strike 1.6 o'yinchilari uchun jonli server, VIP
+            darajalar va faol jamoa. Har kecha de_dust2'da urush boshlanadi.
+          </p>
+          <div class="hero-actions">
+            <a
+              href="steam://connect/84.54.82.234:27047"
+              class="btn btn-primary"
+              id="hero-connect-btn"
+            >
+              <span>Serverga kirish</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a
+              href="https://t.me/weitcs_org"
+              target="_blank"
+              class="btn btn-ghost"
+            >
+              <i class="fa-solid fa-crown"></i>
+              <span>VIP olish</span>
+            </a>
+          </div>
+          <div class="hero-ip">
+            <span class="ip-label">SERVER IP</span>
+            <code id="ip-code">84.54.82.234:27047</code>
+            <button class="ip-copy" id="ip-copy-btn" title="Nusxalash">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVER LIVE -->
+      <section class="server-section" id="server">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Server holati</h2>
+            <p>Har 5 soniyada real vaqtda yangilanadi</p>
+          </div>
+
+          <div class="server-card">
+            <div class="server-card-top">
+              <div class="server-name-block">
+                <span class="live-badge" id="live-badge">
+                  <i class="fa-solid fa-satellite-dish"></i> JONLI
+                </span>
+                <h3 id="server-name">WEIT CS Server</h3>
+              </div>
+              <div class="server-slots">
+                <span class="slots-count"
+                  ><span id="slots-current">0</span>/<span id="slots-max"
+                    >32</span
+                  ></span
+                >
+                <span class="slots-label">o'yinchi</span>
+              </div>
+            </div>
+
+            <div class="server-meta">
+              <div class="meta-item">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-map"></i> Xarita</span
+                >
+                <span class="meta-value" id="server-map">—</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-server"></i> IP manzil</span
+                >
+                <span class="meta-value">84.54.82.234:27047</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-signal"></i> Holat</span
+                >
+                <span class="meta-value" id="server-online-text"
+                  >Tekshirilmoqda...</span
+                >
+              </div>
+            </div>
+
+            <div class="slots-bar">
+              <div
+                class="slots-bar-fill"
+                id="slots-bar-fill"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLAYERS -->
+      <section class="players-section" id="players">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Hozir o'yinda</h2>
+            <p>Serverdagi faol o'yinchilar ro'yxati</p>
+          </div>
+
+          <div class="players-table-wrap">
+            <table class="players-table" id="players-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>O'yinchi</th>
+                  <th>Ball</th>
+                  <th>Vaqt</th>
+                </tr>
+              </thead>
+              <tbody id="players-tbody">
+                <tr class="players-empty-row">
+                  <td colspan="4">Yuklanmoqda...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIP -->
+      <section class="vip-section" id="vip">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>VIP darajalar</h2>
+            <p>
+              Alohida imkoniyatlar bilan o'yinni yangi darajaga olib chiqing
+            </p>
+          </div>
+
+          <div class="vip-grid">
+            <div class="vip-card">
+              <span class="vip-tier"><i class="fa-solid fa-user"></i> FREE</span>
+              <h4>Bepul</h4>
+              <p>Standart o'yinchi huquqlari, hamma uchun ochiq.</p>
+            </div>
+            <div class="vip-card">
+              <span class="vip-tier"><i class="fa-solid fa-moon"></i> Night VIP</span>
+              <h4>Night VIP</h4>
+              <p>Maxsus skinlar va belgilar.</p>
+            </div>
+            <div class="vip-card featured">
+              <span class="vip-tier"><i class="fa-solid fa-crown"></i> BOSS</span>
+              <h4>Boss</h4>
+              <p>Kengaytirilgan skin tanlovi va ustuvor buyruqlar.</p>
+            </div>
+            <div class="vip-card">
+              <span class="vip-tier"><i class="fa-solid fa-gem"></i> PREMIUM</span>
+              <h4>Premium</h4>
+              <p>To'liq skin kutubxonasi va urondagi ustunlik.</p>
+            </div>
+            <div class="vip-card">
+              <span class="vip-tier"><i class="fa-solid fa-hand-holding-dollar"></i> MECENT</span>
+              <h4>Mecent</h4>
+              <p>Jamoaga homiylik darajasi — maxsus imtiyozlar.</p>
+            </div>
+            <div class="vip-card">
+              <span class="vip-tier"><i class="fa-solid fa-star"></i> CREATOR</span>
+              <h4>Creator</h4>
+              <p>Eng yuqori daraja — barcha imkoniyatlar ochiq.</p>
+            </div>
+          </div>
+
+          <div class="vip-cta">
+            <a
+              href="https://t.me/weitcs_org"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="fa-brands fa-telegram"></i>
+              <span>VIP sotib olish — Telegram orqali</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONNECT / SOCIAL -->
+      <section class="connect-section" id="connect">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>Jamoaga qo'shiling</h2>
+            <p>
+              Yangiliklar, e'lonlar va jonli muloqot uchun bizni kuzatib boring
+            </p>
+          </div>
+
+          <div class="social-grid">
+            <a
+              href="https://t.me/weitcs_org"
+              target="_blank"
+              class="social-card"
+            >
+              <div class="social-icon tg"><i class="fa-brands fa-telegram"></i></div>
+              <div class="social-text">
+                <span class="social-title">Telegram — Admin</span>
+                <span class="social-sub">t.me/weitcs_org</span>
+              </div>
+            </a>
+            <a
+              href="https://t.me/weitcschat"
+              target="_blank"
+              class="social-card"
+            >
+              <div class="social-icon tg"><i class="fa-brands fa-telegram"></i></div>
+              <div class="social-text">
+                <span class="social-title">Telegram — Guruh</span>
+                <span class="social-sub">t.me/weitcschat</span>
+              </div>
+            </a>
+            <a href="https://t.me/weitcs" target="_blank" class="social-card">
+              <div class="social-icon tg"><i class="fa-brands fa-telegram"></i></div>
+              <div class="social-text">
+                <span class="social-title">Telegram — Kanal</span>
+                <span class="social-sub">t.me/weitcs</span>
+              </div>
+            </a>
+            <a
+              href="https://instagram.com/weit_cs"
+              target="_blank"
+              class="social-card"
+            >
+              <div class="social-icon ig"><i class="fa-brands fa-instagram"></i></div>
+              <div class="social-text">
+                <span class="social-title">Instagram</span>
+                <span class="social-sub">@weit_cs</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> WEIT CS</span>
+        <span class="footer-ip">84.54.82.234:27047</span>
+      </div>
+    </footer>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
