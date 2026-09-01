@@ -8,12 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/api/status",
-      "dest": "app.py"
-    },
-    {
       "src": "/(.*)",
-      "dest": "static/$1"
+      "dest": "app.py"
     }
   ]
 }
