@@ -1,0 +1,221 @@
+.fc-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 140px 20px 80px;
+  min-height: 100vh;
+}
+
+.fc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 32px;
+}
+
+.fc-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+.fc-title i { color: var(--accent); }
+
+.fc-sub {
+  color: var(--text-dim);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.fc-sub code {
+  background: var(--bg-raised);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+.fc-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin: 16px 0 6px;
+}
+
+.fc-input {
+  width: 100%;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.fc-input:focus { border-color: var(--accent-soft); }
+
+.fc-error {
+  margin-top: 14px;
+  color: var(--danger);
+  font-size: 14px;
+  background: rgba(194, 86, 74, 0.1);
+  border: 1px solid rgba(194, 86, 74, 0.3);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.fc-full-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.btn-outline:hover { border-color: var(--accent-soft); }
+
+.fc-wait-icon {
+  font-size: 40px;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.fc-wait-icon.fc-success { color: var(--live); }
+
+.fc-wait-text {
+  color: var(--text-dim);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.fc-wait-status {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-faint);
+  min-height: 20px;
+}
+
+/* ---- Profile card ---- */
+.fc-profile-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.fc-level-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, var(--accent), var(--accent-soft));
+  color: #12160f;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fc-profile-nick {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text);
+}
+.fc-profile-rank {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.fc-streak-row {
+  margin-bottom: 26px;
+}
+.fc-streak-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.fc-streak-bar {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.fc-streak-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+  transition: width 0.4s ease;
+}
+
+.fc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.fc-stat-box {
+  background: var(--bg-raised);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.fc-stat-value {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text);
+}
+.fc-stat-label {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.fc-loading, .fc-notfound {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 30px 0;
+}
+
+/* ---- Leaderboard ---- */
+.fc-lb-row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.fc-lb-row:last-child { border-bottom: none; }
+.fc-lb-rank {
+  font-family: var(--font-display);
+  color: var(--text-faint);
+  font-size: 15px;
+}
+.fc-lb-rank.top3 { color: var(--accent); }
+.fc-lb-nick { color: var(--text); font-weight: 600; }
+.fc-lb-level {
+  font-family: var(--font-display);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 13px;
+  color: var(--accent);
+}
+.fc-lb-exp { color: var(--text-dim); font-size: 13px; }

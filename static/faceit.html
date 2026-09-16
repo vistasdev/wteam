@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FACEIT Profil — WEIT CS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="faceit.css" />
+  </head>
+  <body>
+    <div class="noise-overlay"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="brand">
+          <span class="brand-mark">W</span>
+          <span class="brand-name">WEIT<span class="brand-cs">CS</span></span>
+        </a>
+        <nav class="main-nav">
+          <a href="/#server">Server</a>
+          <a href="/leaderboard">Reyting</a>
+          <a href="/register">Ro'yxat</a>
+        </nav>
+        <div class="header-right">
+          <a class="nav-cta" href="steam://connect/84.54.82.234:27047">O'YNASH</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="fc-page">
+      <div class="fc-card">
+        <h1 class="fc-title"><i class="fa-solid fa-shield-halved"></i> FACEIT Profil</h1>
+
+        <div id="fc-search-box" style="margin-bottom: 20px;">
+          <label class="fc-label" for="fc-search-input">SteamID bo'yicha qidirish</label>
+          <input id="fc-search-input" class="fc-input" type="text" placeholder="STEAM_0:1:12345678" />
+        </div>
+
+        <div id="fc-content">
+          <div class="fc-loading">SteamID kiriting yoki server orqali /faceit yozing.</div>
+        </div>
+      </div>
+    </main>
+
+    <script src="faceit.js"></script>
+  </body>
+</html>
